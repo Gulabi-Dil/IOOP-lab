@@ -19,17 +19,11 @@ class Rotation
      int choice=sc.nextInt();
      if(choice==1)
      {
-       for(int i=0;i<n;i++)
-       {
-         b[(i+num)%n]=a[i];
-       }
+       for(int i=0;i<n;i++) b[(i+num)%n]=a[i];
      }
      else if(choice==2)
      {
-       for(int i=0;i<n;i++)
-       {
-         b[i]=a[(i+num)%n];
-       } 
+       for(int i=0;i<n;i++) b[i]=a[(i+num)%n];
      }
      else 
      {
