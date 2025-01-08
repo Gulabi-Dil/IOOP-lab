@@ -13,26 +13,29 @@ class Rotation
      for(int i=0;i<n;i++) a[i]=sc.next();
      System.out.println("The array is: ");
      for(int i=0;i<n;i++) System.out.print(a[i]+" ");
-     System.out.print("\nEnter the number of shifts you want to perform: ");     
+     System.out.print("\nEnter the number of shifts you want to perform: ");
      int num=sc.nextInt();
      System.out.print("Enter 1 to shift towards right and 2 to shift towards left: ");
      int choice=sc.nextInt();
      if(choice==1)
      {
-     for(int i=0;i<n;i++)
-     {
-        if((i+num)<n) b[(i+num)%n]=a[i];
-        else b[(i+num)%n]=a[i];
-     }
+       for(int i=0;i<n;i++)
+       {
+         b[(i+num)%n]=a[i];
+       }
      }
      else if(choice==2)
-     for(int i=0;i<n;i++){
      {
-        if((i+num)<n) b[i]=a[i+num];
-        else b[i]=a[(i+num)%n];
-     }}
-     else {System.out.println("Invalid choice");
-     System.exit(0);}
+       for(int i=0;i<n;i++)
+       {
+         b[i]=a[(i+num)%n];
+       } 
+     }
+     else 
+     {
+       System.out.println("Invalid choice");
+       System.exit(0);
+     }
      System.out.println("\nArray after shifting elements: ");
      for(int i=0;i<n;i++) System.out.print(b[i]+" ");
      System.out.println("");
