@@ -13,8 +13,10 @@ class Rotation
      for(int i=0;i<n;i++) a[i]=sc.next();
      System.out.println("The array is: ");
      for(int i=0;i<n;i++) System.out.print(a[i]+" ");
-     System.out.print("\nEnter the number of shifts you want to perform: ");     int num=sc.nextInt();
-     System.out.print("Enter 1 to shift towards right and 2 to shift toward>     int choice=sc.nextInt();
+     System.out.print("\nEnter the number of shifts you want to perform: ");     
+     int num=sc.nextInt();
+     System.out.print("Enter 1 to shift towards right and 2 to shift towards left: ");
+     int choice=sc.nextInt();
      if(choice==1)
      {
      for(int i=0;i<n;i++)
