@@ -33,8 +33,23 @@ class Stock
    }
    if(c<choice)
    {
-     System.out.println("Invalid input. Some items you mentioned are not in stock.");
-     System.exit(0);
+     System.out.println("Some items you requested for are not in stock. Computing bill of available items...");
+     for(int i=0;i<choice;i++)
+     {
+       for(int j=0;j<n;j++)
+       {
+          if(cart[i].equals(name[j])) total[i]=price[j];
+          else
+          {
+            System.out.println(cart[i]+" is not in stock.");
+            break;
+          }
+       }
+     }
+     System.out.println("Enter respective product quantity/quantities: ");
+     for(int i=0;i<c;i++) quant[i]=sc.nextInt();
+     for(int i=0;i<c;i++) bill+=quant[i]*total[i];
+     System.out.println("Total bill is: "+bill);
    }
    else
    {
@@ -45,10 +60,10 @@ class Stock
          if(cart[i].equals(name[j])) total[i]=price[j];
          else continue;
       }
-   }}
+   }
    System.out.println("Enter respective product quantities: ");
-   for(int i=0;i<choice;i++) quant[i]=sc.nextInt();
-   for(int i=0;i<choice;i++) bill+=quant[i]*total[i];
+   for(int i=0;i<c;i++) quant[i]=sc.nextInt();
+   for(int i=0;i<c;i++) bill+=quant[i]*total[i];
    System.out.println("Total bill is: "+ bill);
-  }
+  }}
 }
