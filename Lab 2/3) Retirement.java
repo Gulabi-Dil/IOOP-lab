@@ -56,6 +56,6 @@ public static void main(String[] args)
        else System.out.println("Invalid date input.");
      }
 
-     else System.out.println("Invalid date input abc.");
+     else System.out.println("Invalid date input.");
  }
 }
