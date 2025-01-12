@@ -1,4 +1,5 @@
-// Write a Java program to rotate the elements of an array to the right/left by a given number of steps. The program should handle arrays of different sizes and should be able to rotate the array in both directions (left and right).
+/* Write a Java program to rotate the elements of an array to the right/left by a given number of steps. 
+The program should handle arrays of different sizes and should be able to rotate the array in both directions (left and right). */
 import java.util.Scanner;
 class Rotation
 {
