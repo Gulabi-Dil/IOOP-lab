@@ -41,7 +41,7 @@ class STUDENT
     System.out.println("Student's marks in:");
     for(int i=0;i<n;i++)
     {
-      System.out.println("subject 1: "+marks_array[i]);
+      System.out.println("subject "+(i+1)+": "+marks_array[i]);
     }
     System.out.println("Student's total marks: "+total);
     System.out.println("Student's average marks: "+avg);
