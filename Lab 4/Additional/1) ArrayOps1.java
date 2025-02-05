@@ -24,6 +24,12 @@ class IntArr
     for(int i=0;i<arr.length;i++) System.out.print(arr[i]+" ");
     System.out.println();
   }
+  /*
+  void display()
+  {
+    System.out.println("Displaying elements of the array:\n"+Arrays.toString(arr));
+  }
+  */
   void Searching(int s)
   {
     boolean flag=false;
@@ -56,6 +62,14 @@ class IntArr
     if(check) System.out.println("Both arrays are equal.");
     else System.out.println("Arrays are unequal.");
   }
+  /*
+  void Comparing(IntArr arr2)
+  {
+    if(Arrays.equals(this.arr,arr2.arr)) System.out.println("Arrays are equal.");
+    else System.out.println("Arrays are unequal.");
+  }
+  If this method is used, we have to call the function Comparing like this: ob1.Comparing(ob2);
+  */
 }
 class ArrayOps1
 {
