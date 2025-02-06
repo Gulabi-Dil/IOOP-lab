@@ -229,3 +229,47 @@ public class Main {
 - **Use `Arrays.toString()`** to print arrays properly.
 - **Collections already override `toString()`**, so they print correctly.
 
+---
+# Example of Array of Objects and overriding toString function to print the objects diirectly:
+```java
+import java.util.*;
+class Student
+{
+  int roll;
+  String name;
+  double marks;
+  public String toString()
+  {  return "Roll: "+roll+"\tName: "+name+"\tMarks: "+marks;}
+}
+public class byeworld
+{
+  public static void main(String args[])
+  {
+    Student s1=new Student();
+    s1.roll=1;
+    s1.name="Yahoo";
+    s1.marks=90;
+
+    Student s2=new Student();
+    s2.roll=2;
+    s2.name="Tanay";
+    s2.marks=80;
+
+    Student s3=new Student();
+    s3.roll=3;
+    s3.name="Krisha";
+    s3.marks=87;
+    Student students[]=new Student[3];
+    students[0]=s1;
+    students[1]=s2;
+    students[2]=s3;
+    for(int i=0;i<3;i++) System.out.println(students[i]);
+  }
+}
+```
+Output: 
+```
+Roll: 1 Name: Yahoo     Marks: 90.0
+Roll: 2 Name: Tanay     Marks: 80.0
+Roll: 3 Name: Krisha    Marks: 87.0
+```
