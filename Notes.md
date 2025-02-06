@@ -2,6 +2,7 @@
 - [Pointer like Behavior in Java (Referenicng)](https://github.com/Gulabi-Dil/IOOP-lab/blob/main/Notes.md#pointer-like-behavior-in-java)
 - [toString function](https://github.com/Gulabi-Dil/IOOP-lab/blob/main/Notes.md#understanding-tostring-in-java)
 - [Abstract Classes](https://github.com/Gulabi-Dil/IOOP-lab/blob/main/Notes.md#abstract-classes-and-static-usage-in-java)
+- [Accessing private variable in a different class]()
 ---
 # **(1) Pointer like Behavior in Java (Referenicng)**:
 ## Case 1:
@@ -372,3 +373,35 @@ abstract class Dog extends Animal {
 ✔ **You cannot make an abstract method static**, as it contradicts its purpose.  
 ✔ **Abstract classes without abstract methods** can still be useful for **polymorphism and code reusability**.
 ---
+
+# (4) **Accessing private variable in a different class**
+two methods are available which can be used for this.
+1. setVar() which assigns the value to the private variable.
+2. getVar() which returns the value of the private variable.
+Syntax: The first letter of the variable must be written in uppercase.
+Example:
+```java
+import java.util.*;
+class Student
+{
+  private int age;
+  public void setAge(int x)
+  {
+    age=x;
+  }
+  public int getAge()
+  {
+   return age;
+  }
+}
+class byeworld
+{
+  public static void main(String args[])
+  {
+    Student ob=new Student();
+    int myage=18;
+    ob.setAge(myage);
+    System.out.print(ob.getAge());
+  }
+}
+```
