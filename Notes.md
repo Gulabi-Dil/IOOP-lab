@@ -1,7 +1,7 @@
 # **INDEX**
 - [Pointer like Behavior in Java (Referenicng)](https://github.com/Gulabi-Dil/IOOP-lab/blob/main/Notes.md#pointer-like-behavior-in-java)
 - [toString function](https://github.com/Gulabi-Dil/IOOP-lab/blob/main/Notes.md#understanding-tostring-in-java)
-- 
+- [Abstract Classes](https://github.com/Gulabi-Dil/IOOP-lab/blob/main/Notes.md#abstract-classes-and-static-usage-in-java)
 ---
 # **Pointer like Behavior in Java (Referenicng)**:
 ## Case 1:
