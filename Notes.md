@@ -3,7 +3,7 @@
 - [toString function](https://github.com/Gulabi-Dil/IOOP-lab/blob/main/Notes.md#understanding-tostring-in-java)
 - [Abstract Classes](https://github.com/Gulabi-Dil/IOOP-lab/blob/main/Notes.md#abstract-classes-and-static-usage-in-java)
 ---
-# **1. Pointer like Behavior in Java (Referenicng)**:
+# **(1) Pointer like Behavior in Java (Referenicng)**:
 ## Case 1:
 ```java
 import java.util.*;
@@ -119,7 +119,7 @@ Unlike C or C++, **Java does not have pointers**. Instead, Java uses **reference
 - In Java, you cannot access memory directly, but references **point to objects stored in memory**.
 ---
 
-# **2. Understanding `toString()` in Java**
+# **(2) Understanding `toString()` in Java**
 
 The `toString()` method in Java is used to **return a string representation of an object**. It is defined in the `Object` class, which means every Java class **inherits** it by default.
 
@@ -268,7 +268,7 @@ Roll: 2 Name: Tanay     Marks: 80.0
 Roll: 3 Name: Krisha    Marks: 87.0
 ```
 ---
-# **3. Abstract Classes and `static` Usage in Java**
+# **(3) Abstract Classes and `static` Usage in Java**
 
 ## **1. Abstract Classes and Methods**
 - An **abstract class** is a class that **cannot be instantiated** (objects cannot be created from it).
