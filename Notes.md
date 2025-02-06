@@ -1,4 +1,9 @@
-# Pointer like Behavior in Java:
+# **INDEX**
+- [Pointer like Behavior in Java (Referenicng)](https://github.com/Gulabi-Dil/IOOP-lab/blob/main/Notes.md#pointer-like-behavior-in-java)
+- [toString function](https://github.com/Gulabi-Dil/IOOP-lab/blob/main/Notes.md#understanding-tostring-in-java)
+- 
+---
+# **Pointer like Behavior in Java (Referenicng)**:
 ## Case 1:
 ```java
 import java.util.*;
@@ -102,13 +107,9 @@ class IOOP
 
 **Output:** `[1, 2, 3, 4, 5]`
 
----
-
 ## **Explanation:**
 
 Arrays, like other objects in Java, are stored as references. When the `Check()` method is called, it **returns a reference** to the array, not its actual contents.
-
----
 
 ## **Pointers vs. References in Java**
 
@@ -116,6 +117,7 @@ Unlike C or C++, **Java does not have pointers**. Instead, Java uses **reference
 
 - In C++, you can manipulate memory directly with pointers.
 - In Java, you cannot access memory directly, but references **point to objects stored in memory**.
+---
 
 # **Understanding `toString()` in Java**
 
@@ -145,7 +147,6 @@ public class Main {
 ```
 💡 **Calling `System.out.println(obj);` is the same as `System.out.println(obj.toString());` because `println` automatically calls `toString()`.**
 
----
 
 ## **2. Overriding `toString()` for Custom Output**
 Since the default `toString()` is not very useful, we **override it** in custom classes to return meaningful information.
@@ -178,7 +179,6 @@ public class Main {
 💡 **Without overriding `toString()`, the output would be** `Person@hashcode`.  
 💡 **With overriding, we get a useful string representation** instead.
 
----
 
 ## **3. `toString()` in Arrays**
 In Java, **arrays do not override `toString()`**, so calling `toString()` on an array gives the default behavior:
@@ -192,8 +192,6 @@ System.out.println(arr.toString());  // Output: [I@7ad041f3
 ```java
 System.out.println(Arrays.toString(arr)); // Output: [1, 2, 3, 4]
 ```
-
----
 
 ## **4. `toString()` in Collections (Like `ArrayList`)**
 Unlike arrays, Java Collections (like `ArrayList`, `HashMap`, etc.) **override `toString()`**, so calling `toString()` on them **prints their contents properly**.
@@ -211,8 +209,6 @@ public class Main {
 }
 ```
 
----
-
 ## **5. Summary**
 | Scenario | `toString()` Output |
 |----------|----------------------|
@@ -221,7 +217,6 @@ public class Main {
 | **Called on arrays** | `"[I@hashcode"` (use `Arrays.toString()`) |
 | **Called on `ArrayList`, `HashMap`, etc.** | Prints contents directly (e.g., `[1, 2, 3, 4]`) |
 
----
 
 ## **Final Thoughts**
 - `toString()` **helps represent an object as a string**.
@@ -229,7 +224,6 @@ public class Main {
 - **Use `Arrays.toString()`** to print arrays properly.
 - **Collections already override `toString()`**, so they print correctly.
 
----
 # Example of Array of Objects and overriding toString function to print the objects diirectly:
 ```java
 import java.util.*;
@@ -273,3 +267,108 @@ Roll: 1 Name: Yahoo     Marks: 90.0
 Roll: 2 Name: Tanay     Marks: 80.0
 Roll: 3 Name: Krisha    Marks: 87.0
 ```
+---
+# **Abstract Classes and `static` Usage in Java**
+
+## **1. Abstract Classes and Methods**
+- An **abstract class** is a class that **cannot be instantiated** (objects cannot be created from it).
+- It is **meant to be inherited** by subclasses.
+- It can have both **abstract methods (without a body)** and **concrete methods (with a body)**.
+
+### **Example of an Abstract Class with an Abstract Method**
+```java
+// Abstract class
+abstract class Main {
+  public String fname = "John";
+  public int age = 24;
+  public abstract void study(); // Abstract method (must be implemented in subclass)
+}
+
+// Subclass (inherits from Main)
+class Student extends Main {
+  public int graduationYear = 2018;
+
+  public void study() { // Abstract method implemented
+    System.out.println("Studying all day long");
+  }
+}
+
+// Another class to run the program
+class Second {
+  public static void main(String[] args) {
+    Student myObj = new Student();
+    System.out.println("Name: " + myObj.fname);
+    System.out.println("Age: " + myObj.age);
+    System.out.println("Graduation Year: " + myObj.graduationYear);
+    myObj.study(); // Calls the implemented method
+  }
+}
+```
+
+### **Key Points About Abstract Classes**
+- ✅ **Can contain instance variables**.
+- ✅ **Can have constructors**.
+- ✅ **Can contain both abstract and concrete methods**.
+- ❌ **Cannot be instantiated directly**.
+- ✅ **A subclass must implement all abstract methods**, otherwise it must be declared abstract.
+
+
+## **2. What Happens If a Subclass Doesn't Implement Abstract Methods?**
+- If a subclass **does not** implement all abstract methods from the parent class, it must also be declared `abstract`.
+  
+### **Example**
+```java
+abstract class Animal {
+    abstract void makeSound();
+}
+
+// Dog class does not implement makeSound(), so it must be abstract too
+abstract class Dog extends Animal {
+}
+```
+
+
+## **3. Abstract Class Without Abstract Methods (Allowed)**
+- An abstract class **can exist without** abstract methods.
+- It is used to **prevent object creation** and **provide common behavior to subclasses**.
+
+### **Why Use an Abstract Class Without Abstract Methods?**
+- ✅ **To prevent direct object creation**.
+- ✅ **To provide common functionality** to subclasses (e.g., `showSalary()`).
+- ✅ **To support polymorphism** (abstract class reference can be used for different subclasses).
+
+
+## **4. `static` and Abstract Classes**
+### **(a) `static` Abstract Methods (❌ Not Allowed)**
+- ❌ **Abstract methods must be overridden** in subclasses.
+- ❌ **Static methods belong to the class itself** and **cannot** be overridden.
+
+### **(b) `static` Methods in Abstract Classes (✅ Allowed)**
+- Static methods **do not** need an object and **can be called directly**.
+
+
+### **(c) `static` Variables in Abstract Classes (✅ Allowed)**
+- Shared among **all instances of subclasses**.
+
+
+### **(d) `static` Blocks in Abstract Classes (✅ Allowed)**
+- Runs **once** when the class is **first loaded**.
+
+
+## **5. Summary Table**
+
+| Feature                         | Allowed? | Why? |
+|----------------------------------|---------|------|
+| **Abstract method as `static`**  | ❌ No  | Abstract methods must be **overridden**, but static methods **cannot be overridden**. |
+| **Static methods in an abstract class** | ✅ Yes | Can be used **without an instance** (e.g., utility methods). |
+| **Static variables in an abstract class** | ✅ Yes | Shared among **all instances** of subclasses. |
+| **Static blocks in an abstract class** | ✅ Yes | Executes **once** when the class is loaded. |
+
+
+## **Final Takeaways**
+✔ **Abstract classes** provide a common blueprint for related classes.  
+✔ **Abstract methods must be implemented by subclasses**.  
+✔ **Static methods & variables work normally** inside an abstract class.  
+✔ **You cannot make an abstract method static**, as it contradicts its purpose.  
+✔ **Abstract classes without abstract methods** can still be useful for **polymorphism and code reusability**.
+---
