@@ -405,3 +405,46 @@ class byeworld
   }
 }
 ```
+---
+
+# (5) **String function regionMatches**
+
+'''java
+public static void main(String args[])
+{
+  String a="Hello";
+  String b="Hello";
+  boolean c=a.substring(0,4).toLowerCase().equals(b.substring(0,4));
+  System.out println(c);
+}
+'''
+
+This can be easily achieved by regionMatches-
+'''java
+public static void main(String args[])
+{
+  String a="Hello";
+  String b="Hello";
+  boolean c= a.regionMatches(true,0,b,0,4);
+  System.out println(c);
+}
+'''
+## Syntax:
+
+Breakdown of parameters:
+
+1. true/false → Enables case-insensitive comparison.
+
+
+2. 0 → Start index in a.
+
+
+3. b → The string to compare with.
+
+
+4. 0 → Start index in b.
+
+
+5. 4 → Number of characters to compare.
+
+---
