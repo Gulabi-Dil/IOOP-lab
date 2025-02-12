@@ -409,7 +409,7 @@ class byeworld
 
 # (5) **String function regionMatches**
 
-'''java
+```java
 public static void main(String args[])
 {
   String a="Hello";
@@ -417,10 +417,10 @@ public static void main(String args[])
   boolean c=a.substring(0,4).toLowerCase().equals(b.substring(0,4));
   System.out println(c);
 }
-'''
+```
 
 This can be easily achieved by regionMatches-
-'''java
+```java
 public static void main(String args[])
 {
   String a="Hello";
@@ -428,7 +428,7 @@ public static void main(String args[])
   boolean c= a.regionMatches(true,0,b,0,4);
   System.out println(c);
 }
-'''
+```
 ## Syntax:
 
 Breakdown of parameters:
