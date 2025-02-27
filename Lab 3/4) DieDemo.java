@@ -13,7 +13,7 @@ class Die
   void roll()
   {
     Random dice=new Random();
-    sideUp=dice.nextInt(7);
+    sideUp=dice.nextInt(1,7);
   }
 }
 class DieDemo
